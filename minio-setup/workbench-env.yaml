@@ -1,0 +1,11 @@
+---
+kind: Secret
+apiVersion: v1
+metadata:
+  name: aws-use-case-wb-env
+data:
+  AWS_ACCESS_KEY_ID: <base64_VALUE>
+  AWS_SECRET_ACCESS_KEY: <base64_VALUE>
+  AWS_DEFAULT_REGION: <base64_VALUE>
+  AWS_S3_ENDPOINT: <base64_VALUE>
+  AWS_S3_BUCKET: <base64_VALUE>
