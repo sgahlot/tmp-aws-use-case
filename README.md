@@ -15,6 +15,8 @@ This project uses `MinIO` to store the model:
 
 Open up `Red Hat OpenShift AI` by selecting it from OpenShift Application Launcher. This will open up Red Hat OpenShift AI in a new tab.
 
+Create a Data Science project in `Red Hat OpenShift AI` window.
+
 ### Setup MinIO
 To setup MinIO, for storing the model, execute the following commands in a terminal/console:
 ```
@@ -24,8 +26,8 @@ oc login --token=<OCP_TOKEN>
 # Install MinIO
 MINIO_USER=<USERNAME> \
    MINIO_PASSWORD="<PASSWORD>" \
-   envsubst < minio-setup.yml | \
-   oc apply -f - -n <PROJECT_CREATED_IN_PREVIOUS_STEP>
+   envsubst < minio-setup/minio-setup.yml | \
+   oc apply -f - -n <DATA_SCIENCE_PROJECT_CREATED_IN_PREVIOUS_STEP>
 ```
 * _Set `<USERNAME>` and `<PASSWORD>` to some valid values, in the above command, before executing it_
 
@@ -49,7 +51,7 @@ When creating the workbench, add the following environment variables:
   * This bucket should _either be existing or will be created_ by one of the
     Jupyter notebooks to upload the model
 * AWS_DEFAULT_REGION
-  * Set it to us-east-1 if using `MinIO`
+  * Set it to `us-east-1`
 
   _The environment variables can be added one by one, or all together by uploading a secret yaml file_
 
